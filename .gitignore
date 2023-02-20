@@ -5,3 +5,5 @@ statement-converter/lib64
 test_data/input_lines.txt
 test_data/output_lines.txt
 *.pyc
+.pytest_cache
+__pycache__
