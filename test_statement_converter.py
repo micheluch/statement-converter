@@ -1,5 +1,6 @@
 import pytest
 import os
+import filecmp as fc
 from statement_converter import *
 
 INPUT_FILE_NAME  = 'input_lines.txt'
@@ -33,6 +34,10 @@ def test_convert_file_saves_new_file(output_file_path):
     #output_path = tmp_path / "output_lines.txt"
     convert_file(INPUT_FILE_PATH, output_file_path)
     assert output_file_path.read_text() is not None
+
+def test_convert_file_writes_to_file(output_file_path):
+    convert_file(INPUT_FILE_PATH, output_file_path)
+    assert fc.cmp(INPUT_FILE_PATH, output_file_path) is True
 
 ''' Fixtures '''
 @pytest.fixture

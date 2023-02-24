@@ -15,5 +15,7 @@ def split_line(line: str):
 def convert_file(input_file_path, output_file_path):
     with open(input_file_path, 'r') as f:
         with open(output_file_path, 'w') as w:
+            lines = []
             for line in f:
-                print(line)
+                lines.append(line)
+            w.writelines(lines)
