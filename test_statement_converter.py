@@ -31,13 +31,18 @@ def test_convert_file_raises_exception_on_nonexistant_file():
         convert_file('fake', 'fake') 
 
 def test_convert_file_saves_new_file(output_file_path):
-    #output_path = tmp_path / "output_lines.txt"
     convert_file(INPUT_FILE_PATH, output_file_path)
     assert output_file_path.read_text() is not None
 
-def test_convert_file_writes_to_file(output_file_path):
-    convert_file(INPUT_FILE_PATH, output_file_path) # INPUT_FILE_PATH, output_file_path)
-    assert fc.cmp(INPUT_FILE_PATH, output_file_path) is True
+def test_convert_file_writes_lines_to_file(output_file_path):
+    convert_file(INPUT_FILE_PATH, "./test_data/test_output.txt")#output_file_path)
+    assert fc.cmp(OUTPUT_FILE_PATH, "./test_data/test_output.txt") is True
+
+##########################################
+# Need to add command line arguments next
+##########################################
+def test_accepts_args():
+     assert False
 
 ''' Fixtures '''
 @pytest.fixture
