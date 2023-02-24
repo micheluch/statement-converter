@@ -18,4 +18,8 @@ def convert_file(input_file_path, output_file_path):
             lines = []
             for line in f:
                 lines.append(line)
+                print(line)
             w.writelines(lines)
+    with open(output_file_path, "r") as f:
+        for line in f:
+            print(line)
