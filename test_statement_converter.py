@@ -38,12 +38,6 @@ def test_convert_file_writes_lines_to_file(output_file_path):
     convert_file(INPUT_FILE_PATH, "./test_data/test_output.txt")#output_file_path)
     assert fc.cmp(OUTPUT_FILE_PATH, "./test_data/test_output.txt") is True
 
-##########################################
-# Need to add command line arguments next
-##########################################
-def test_accepts_args():
-     assert False
-
 ''' Fixtures '''
 @pytest.fixture
 def output_file_path(tmp_path):

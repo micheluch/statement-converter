@@ -2,8 +2,7 @@ statement-converter/bin/python
 statement-converter/bin/python3
 statement-converter/bin/python3.10
 statement-converter/lib64
-test_data/input_lines.txt
-test_data/output_lines.txt
+test_data/*
 *.pyc
 .pytest_cache
 __pycache__

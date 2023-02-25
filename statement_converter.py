@@ -1,5 +1,4 @@
 import csv
-import argparse
 
 def line_to_csv(line: str):
     return ','.join(split_line(line))
@@ -22,4 +21,15 @@ def convert_file(input_file_path, output_file_path):
             lines[-1] = lines[-1].rstrip()
             w.writelines(lines)
 
-def main():
+def main(input_file_path, output_file_path):
+    convert_file(input_file_path=input_file_path, output_file_path=output_file_path)
+    #print("Input file path:  " + input_file_path)
+    #print("Output file path: " + output_file_path)
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Convert Chase statement files to csv")
+    parser.add_argument('input_file_path')
+    parser.add_argument('output_file_path')
+    args = parser.parse_args()
+    main(input_file_path=args.input_file_path, output_file_path=args.output_file_path)
