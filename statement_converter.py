@@ -21,3 +21,5 @@ def convert_file(input_file_path, output_file_path):
                 lines.append(line + '\n')
             lines[-1] = lines[-1].rstrip()
             w.writelines(lines)
+
+def main():
