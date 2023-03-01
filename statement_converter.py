@@ -1,7 +1,7 @@
 import csv
 
 def line_to_csv(line: str):
-    return ','.join(split_line(line))
+    return '|'.join(split_line(line))
 
 def split_line(line: str):
     results = []
